@@ -2,9 +2,9 @@ function hello1() {
   return "Hi there";
 }
 
-console.log(hello1());
+console.log(hello);
 
-hello1 = function () {
+var hello = function () {
   return "hey there again";
 };
 

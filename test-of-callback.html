@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <button id="mybutton">CliCK mee</button>
+  </body>
+  <script>
+    const button = document.getElementById("mybutton");
+
+    function onButtonClick() {
+      setTimeout(() => {
+        console.log("Timeout fired");
+      }, 1000);
+
+      console.log(1);
+      console.log("1");
+      console.log("t");
+      alert("SUP");
+    }
+    button.addEventListener("click", onButtonClick);
+  </script>
+</html>

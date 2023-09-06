@@ -10,8 +10,8 @@ let changeNumToString = String(num);
 // console.log("Data Type = " + typeof changeNumToString);
 // console.log(changeNumToString);
 
-let variable = 1e299;
-let changeVariable = Number(variable);
+let variable = {FDA : 0x1};
+let changeVariable = Object(variable);
 
 console.log("type of NaN = " + typeof (variable));
 console.log("Data Type of changed = " + typeof changeVariable);

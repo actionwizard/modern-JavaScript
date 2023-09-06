@@ -17,4 +17,7 @@ console.log("type of NaN = " + typeof (variable));
 console.log("Data Type of changed = " + typeof changeVariable);
 console.log(changeVariable);
 
-
+//A few more things to consider
+console.log(true);  //op=> true
+console.log(+true);  //op=> 1
+console.log(+"");  //op=> 0

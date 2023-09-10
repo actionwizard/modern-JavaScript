@@ -1,0 +1,4 @@
+API -> A way for two applications to communicate with each other.
+       It sends your request to another device, such as a database
+       and delivers back the response to you.
+       ex of waiter in a restaurant

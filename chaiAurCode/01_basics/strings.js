@@ -27,5 +27,6 @@ let str2 = new String("loremipsum");
 let subStr = str1.substring(0, 5);
 console.log(subStr);
 
-let sliceStr = str1.slice(-1); //This will take values from the end
+let sliceStr = str1.slice(-6,-2); //This will take values from the end
 console.log(sliceStr);
+

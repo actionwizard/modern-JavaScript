@@ -48,5 +48,15 @@ const val = {1 : 'ar'};
 //strings to easily convert ho jaari array me
 
 //Similarly to from ek of ka trika bhi hai, multiple values ko ek sath array me convert karne ke liye
-console.log(Array.of(...array1D, array2D));     //This will convert the given quantities into an array, spread operator also works
-console.log(Array.of(array1D));     //This will even convert an array into another array containing the array
+// console.log(Array.of(...array1D, array2D));     //This will convert the given quantities into an array, spread operator also works
+// console.log(Array.of(array1D));     //This will even convert an array into another array containing the array
+
+const arr1 = [1,2,3,4,5];
+const arr2 = [1,2,3,4,5];
+const arr3 = arr1;
+const arr4 = arr2;
+
+console.log(arr1 == arr1);
+console.log(arr3 == arr2);
+console.log(arr1 == arr3);
+console.log(arr2 == arr4);

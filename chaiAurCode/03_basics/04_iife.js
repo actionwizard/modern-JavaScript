@@ -22,6 +22,3 @@ console.log("hi");
 
 //INTERVIEW -> Global scope ke pollution se problem hoti hai kayi baar, to jo bhi global scope ke jo bhi variables ya declareations
 //             hai unke pollution ko hatane ke liye IIFE ka use karte hai
-
-
-

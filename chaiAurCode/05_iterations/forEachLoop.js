@@ -1,4 +1,5 @@
-//Ye kafi use kia jayega arrays par 
+//Ye kafi use kia jayega arrays par, ek jaruri baat ye array.forEach loop jo hai na ye koi loop nahi hai agar aasaan shabdo me kahu
+//ye forEach loop bas array ke har ek element par iterate karna aasaan bana deta hai. This does not returns anything (undefined return krta)
 
 // array.forEach(element => {
     

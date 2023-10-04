@@ -56,3 +56,30 @@ form.addEventListener('submit', function (e) {
   }
 });
 ```
+
+## aniE project 3
+
+```javascript
+  const clock = document.querySelector('#clock');
+
+let time = new Date();
+
+time = time.toLocaleTimeString();
+
+clock.innerHTML = time;
+
+//Cronjob kuch hota hai, use bhi use kar sakte hai
+
+//setInterval -> isko koi bhi method dedo input me aur ye us method ko continuous interval par run karta rahega
+
+//Learn this syntax write this function like it only setInterval(function(){}, 1000)
+//1000 means 1000 ms, you can set the value there accordingly
+
+setInterval(function () {
+  time = new Date().toLocaleTimeString();
+  clock.innerHTML = time;
+}, 1000);
+
+//Is upar wale function ko use krke time har 1 second par function run hora jisse time bar bar update hora
+
+```

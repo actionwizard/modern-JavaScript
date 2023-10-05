@@ -83,3 +83,108 @@ setInterval(function () {
 //Is upar wale function ko use krke time har 1 second par function run hora jisse time bar bar update hora
 
 ```
+
+## aniE project 4
+
+```javascript
+
+let randNum = parseInt(Math.random() * 100 + 1);
+
+const userInput = document.querySelector('#guessField');
+const submit = document.querySelector('#subt');
+const guesses = document.querySelector('.guesses');
+const remainingGuess = document.querySelector('.lastResult');
+const lowOrHigh = document.querySelector('.lowOrHi');
+const startOver = document.querySelector('.resultParas');
+
+const p = document.createElement('p');
+
+let prevGuess = []; //User ko dikhadenge isme ki kya kya guess kiye hai previous me
+let numGuess = 1;
+let playGame = true;
+
+if (playGame) {
+  submit.addEventListener('click', function (e) {
+    e.preventDefault(); //By Default wo submit ho jata usko rokne ke liye we did this
+
+    const guess = userInput.value;
+    validateGuess(guess);
+  });
+}
+
+function validateGuess(guess) {
+  //Guess jo input me dali user ne usko validate karne ka kaam karega ye function
+
+  if (isNaN(guess)) {
+    alert('Please Enter a Valid Number');
+    userInput.value = '';
+  } else if (guess < 1) {
+    userInput.value = '';
+    alert('Please Enter a Number Greater than 1');
+  } else if (guess > 100) {
+    alert('Please Enter a Number Less than 100');
+    userInput.value = '';
+  } else {
+    prevGuess.push(guess);
+    if (numGuess === 10) {
+      displayGuess(guess);
+      displayMessage(`GAME OVER!!!.. Random Number was ${randNum}`);
+      endGame();
+    } else {
+      displayGuess(guess);
+      checkGuess(guess);
+    }
+  }
+}
+
+function checkGuess(guess) {
+  //Jo guess kiya user ne wo agar random number ke equal to jeet gya user, displayMessage() call krdo
+  let absDiff = Math.abs(guess - randNum);
+
+  if (absDiff === 0) {
+    displayMessage(`Finally after ${numGuess - 1} guesses you guessed it.`);
+  } else if (absDiff < 10) {
+    if (guess < randNum) displayMessage(`Number is low`);
+    else displayMessage(`Number is high`);
+  } else {
+    if (guess < randNum) displayMessage(`Number is TOOO low`);
+    else displayMessage(`Number is TOOO high`);
+  }
+}
+
+function displayGuess(guess) {
+  //DOM par guess ko dikhane ka kaam karega ye
+
+  userInput.value = ''; //After submitting we reset the value
+  guesses.innerHTML += `${guess} `;
+  numGuess++;
+  remainingGuess.innerHTML = `${11 - numGuess}`;
+}
+
+function displayMessage(message) {
+  lowOrHigh.innerHTML = `<h2>${message}</h2>`;
+}
+
+function endGame() {
+  //Jitney bhi input fields hai unko clear kardene ka
+  userInput.value = '';
+  //User Input naa daal paye koi wo set kardo
+  userInput.setAttribute('disabled', '');
+  p.classList.add('button');
+  p.innerHTML = `<button id='newGame'>Start New Game</button>`;
+  startOver.appendChild(p);
+  playGame = false;
+  newGame();
+}
+
+function newGame() {
+  const newGameButton = document.querySelector('#newGame');
+  newGameButton.addEventListener('click', function (e) {
+    playGame = true;
+
+    //hitesh sir cleared all the variables but I didn't and the code is working fine
+  });
+}
+
+
+```
